@@ -1,0 +1,4 @@
+test_imgs/1.jpg
+test_imgs/2.jpeg
+test_imgs/3.jpg
+test_imgs/4.jpeg
