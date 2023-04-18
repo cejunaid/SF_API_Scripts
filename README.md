@@ -10,7 +10,7 @@ Detect human faces in an image, return face rectangles.
 * Max image file pixel size is 1000.
 * Max file upload size is 2.5Mb. 
 
-###Response 200
+### Response 200
 Json response containing list of face rectangles
 ```
 {
