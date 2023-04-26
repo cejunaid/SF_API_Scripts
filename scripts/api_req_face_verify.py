@@ -9,9 +9,8 @@ url = "https://api.sensusfuturis.com/api/v1/face_verify"
 
 # Create the POST request
 headers = {
-            "content-type": "application/octet-stream",
-            "content-Disposition": "attachment; filename='img.jpg'",
-            "Authorization": "Token <replace with token>"
+            
+            "Authorization": "Token <replace with token>",
             }
 
 response = requests.post(url, files=img_files, headers=headers)

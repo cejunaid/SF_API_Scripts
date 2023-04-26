@@ -5,7 +5,7 @@ import requests
 
 class SFAPI():
     def __init__(self) -> None:
-        self.fd_url = "https://api.sensusfuturis.com/api/v1/face_embedding"
+        self.url = "https://api.sensusfuturis.com/api/v1/face_embedding"
 
     def face_detector(self, image_path):
         # Read the image
@@ -14,12 +14,12 @@ class SFAPI():
 
         
         # Create the POST request
-        headers = {"content-type": "application/octet-stream",
-                "content-Disposition": "attachment; filename='img.jpg'",
-                "Authorization": "Token <replace with token>"
-                }
+        headers = {
+                    "Authorization": "Token <replace with token>",
+                  }
 
-        response = requests.post(self.fd_url, data=image_data, headers=headers)
+        files = {'file': image_data}
+        response = requests.post(self.url, files=files, headers=headers)
         return response.text
     
 if __name__ =='__main__':
