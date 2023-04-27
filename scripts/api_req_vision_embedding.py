@@ -5,7 +5,9 @@ import json
 
 class SFAPI():
     def __init__(self) -> None:
-        self.url = "https://api.sensusfuturis.com/api/v1/appearance_embedding"
+        self.url = "https://api.sensusfuturis.com/api/v1/people/vision/embedding"
+        #or if the person image is already cropped and you want to use the complete image for generating the embedding
+        self.url = "https://api.sensusfuturis.com/api/v1/people/full/vision/embedding"
         
     def appearance_embedding(self, image_path):
         # Read the image

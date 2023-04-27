@@ -5,10 +5,10 @@ import json
 
 class SFAPI():
     def __init__(self) -> None:
-        self.url = "https://api.sensusfuturis.com/api/v1/lang_embedding"
+        self.url = "https://api.sensusfuturis.com/api/v1/people/text/embedding"
         
         
-    def language_embedding(self, sentences):
+    def text_embedding(self, sentences):
         # Read the image
         
         # Create the POST request
@@ -41,10 +41,10 @@ if __name__ =='__main__':
         'A girl wearing a floral scarf '
         
         ]
-    lang_resp = sf_api.language_embedding('::'.join(ts))
-    #print(lang_resp)
-    ad = json.loads(lang_resp)
-    lang_feat = np.array(ad['language_embedding'])
-    np.save('extra/cctv_lang.npy', lang_feat)
+    text_resp = sf_api.text_embedding('::'.join(ts))
+    
+    ad = json.loads(text_resp)
+    text_feat = np.array(ad['text_embeddings'])
+    
     print('All done!')
     

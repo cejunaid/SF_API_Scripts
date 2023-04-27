@@ -5,7 +5,7 @@ import requests
 
 class SFAPI():
     def __init__(self) -> None:
-        self.url = "https://api.sensusfuturis.com/api/v1/face_detector"
+        self.url = "https://api.sensusfuturis.com/api/v1/faces/detector"
 
     def face_detector(self, image_path):
         # Read the image

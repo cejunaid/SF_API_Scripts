@@ -2,7 +2,7 @@ import requests
 
 # Read the query and verification images
 img_files = [('qfile', open('test_imgs/1.jpg', 'rb')), ('vfile', open('test_imgs/2.jpeg', 'rb'))]
-url = "https://api.sensusfuturis.com/api/v1/face_verify"
+url = "https://api.sensusfuturis.com/api/v1/faces/verify"
 
 
 

@@ -13,21 +13,21 @@ from PIL import Image
 class L2V():
     def __init__(self) -> None:
             
-        #load all the appearance features
-        self.all_appearance_data =np.load('path_to_appearance_features.npy', allow_pickle=True)
+        #load all the vision features
+        self.all_vision_data =np.load('path_to_vision_features.npy', allow_pickle=True)
         
-        self.all_pd_data = np.load('path_to_person_detection.npy', allow_pickle=True).tolist()
+        self.all_pd_data = np.load('path_to_person_detections.npy', allow_pickle=True).tolist()
         
     
     def get_l2v(self, lang_feat, frame_nr, sentence):
         
         
         pd = self.all_pd_data[frame_nr]
-        vis = np.array(self.all_appearance_data[frame_nr])
+        all_vision_features = np.array(self.all_vision_data[frame_nr])
         lang = np.expand_dims(np.array(lang_feat), axis=0)
         
         #get cosine similarity
-        z = cosine_similarity(vis, Y=lang)
+        z = cosine_similarity(all_vision_features, Y=lang)
         
         #get matching index of person detection
         max_idx = np.argmax(z)
